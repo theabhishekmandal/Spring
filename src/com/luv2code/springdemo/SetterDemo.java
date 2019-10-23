@@ -24,6 +24,7 @@ public class SetterDemo {
 		// call our new methods to get the literal values
 		System.out.println(theCoach.getTeam());
 		System.out.println(theCoach.getEmailAddress());
+
 		// close the context
 		context.close();
 				
