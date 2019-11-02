@@ -1,0 +1,249 @@
+Why Spring?
+
+    -   Early version of EJB(v1 and v2) were extremely complex !!!
+    -   Multiple deployment descriptors.
+    -   Multiple Interfaces.
+    -   Poor Performance of Entity Beans.
+
+What's New in Spring 5?
+    -   Updated minimum java requirements for Java 8 or higher
+    -   Deprecated Legacy integration for: Tiles, Velocity, Guava etc
+    -   Updated Spring MVC to use new versions of Servlet API 4.0
+    -   Added new reactive programming framework: Spring WebFlux.
+
+Goals of Spring
+    -   LightWeight development with Java POJOs (Plain Old Java Objects)
+    -   Dependency injection to promote loose coupling
+    -   Declarative programming with Aspect-Oriented-Programming(AOP)
+    -   Minimize boilerplate Java code
+
+Spring Core Container
+    -   It manages how beans are created
+    -   It has four parts:
+            1.  Beans   -   (BeanFactory)It is responsbile for creating beans. Read Config files, setting properties etc
+            2.  Core    -   creating beans and making those beans available
+            3.  SpEl    -   Spring Expression Language, used within the config file to refer to other beans
+            4.  Context -   It is responsible to hold the beans in the memory
+
+Spring Infrastructure
+    -   Aop             -   It allows to create applciation wide services like logging, security, transaction, instrumentation.
+                            No need to modify your code, just add a config or annotation.
+    -   Aspects         -
+    -   Instrumentation -   Creating Java agents to remotely monitor your app with JMX (Java Management Extension)
+    -   Messaging       -
+
+Data Access Layer
+    -   JDBC            -   JDBC helper classes, helps to reduce the JDBC code by 50 %
+    -   ORM             -   Object to Relational Mapping, Integration with hibernate and JPA
+    -   Transactions    -   Supporting Transactions on methods, database calls.
+    -   OXM             -
+    -   JMS             -   Java Message Service, used to send message to the message queue asynchronously
+
+Home for Spring MVC framework(Web Layer)
+    -   Servlet         -
+    -   WebSocket       -
+    -   Web             -
+    -   Portlet         -
+
+Test Layer
+    -   Unit        -
+    -   Integration -
+    -   Mock        -
+
+What are Spring "Projects" ?
+    -   Additional Spring modules built-on top of the core Spring Framework
+    -   Only use what you need,
+    -   Spring Cloud, Spring Data
+    -   Spring Batch, Spring Security
+    -   Spring for Android, Spring Web Flow
+    -   Spring Web Services, Spring LDAP
+
+Installing tomcat in linux:
+    go to tomcat.apache.org and download the latest tar.gz format file
+    sudo -s
+    cd /usr/local
+    mv apache-tomcat-9.0xxx tomcat9
+    vim ~/.bashrc
+    write these three lines and save
+    export CATALINA_HOME="/usr/local/tomcat9"
+    alias tomcatstart="/usr/local/tomcat9/bin/startup.sh"
+    alias tomcatstop="/usr/local/tomcat9/bin/shutdown.sh"
+    source ~/.bashrc
+    sudo chmod -R 777 /usr/local/tomcat9  => give permission to user
+
+To start and stop:
+sudo -s
+tomcatstart (to start the server)
+tomcatstop  (to stop the server)
+
+Integrating tomcat9 to eclipse:
+    -   Open eclipse and go to servers tab
+    -   Select Apache and go to Apache version 9
+    -   select the directory as /usr/local/tomcat9
+
+Installing Spring jar files
+    -   go to www.luv2code.com/downloadspring
+    -   go to latest spring version and download dist.zip file
+    -   extract the zip file
+    -   goto the lib folder and copy all the jar files
+    -   create a java project such as "spring-demo-one"
+    -   create a folder named as "lib" and paste all the jar files
+    -   now right click on project "spring-demo-one" and goto properties
+    -   goto java Build Path -> libraries and then click add jars
+    -   Select all the jars and click add and then apply and close
+
+Inversion of Control
+    -   Outsource to an object factory
+    -   The process of outsourcing the construction and management of objects.
+    -   Spring Container Primary Functions
+        -   Create and manage objects(Inversion of Control)
+        -   Inject object's dependencies(Dependency injection)
+    -   Configuring Spring Container
+        -   XML Configuration(legacy, but most legacy app still use this)
+        -   Java Annotations(modern)
+        -   Java Source Code(modern)
+    -   Spring Development Process
+        -   Configuring your Spring Beans
+            -   Using applicationContext.xml file to add the beans
+        -   Create a spring Container
+            -   Spring Container is generally known as ApplicationContext
+                -   Specialized implementations
+                    -   ClassPathXmlApplicationContext
+                    -   AnnotationConfigApplicationContext
+                    -   GenericWebApplicationContext
+                    -   others
+        -   Retrieve beans from Spring Container
+            -   Using ClassPathXmlApplicationContext to create a spring container
+            -   retrieving bean from the spring container
+
+What is Spring Bean
+    -   A "Spring Bean" is simply a Java Object.
+    -   When Java objects are created by the Spring Container, then
+        Spring refers to them as "Spring Beans".
+    -   Spring beans are created from normal Java classes just like java objects
+
+
+What is dependency injection
+    -   Dependency injection is a pattern through which we implement IoC,
+        where the control being inverted is setting of object's dependencies.
+    -   Dependecy injection is the outsourcing and injection of the objects.
+    -   Rather than manually creating the objects and it's dependencies
+        Spring Framework will do this for us.
+    -   Injection Types in Spring that are most commonly used.
+        -   Constructor Types
+        -   Setter Injection
+    -   Injection of literal values can also be done
+    -   Injection using properties file,
+
+Bean Scopes
+    -   What is Singleton ?
+        -   Spring Container only creates only one instance by default
+        -   It is cached in memory
+        -   All requests to the bean will return the SHARED reference
+            to the SAME bean
+        -   You can explicitly specify bean scope using the scope keyword in the xml
+        -   Scope           Description
+            singleton       Create single shared instance of the bean. Default scope.
+            prototype       Creates a new bean instance for each container request.
+            request         Scoped to an HTTP web request. Only used for web apps.
+            session         Scoped to an HTTP web session. Only used for web apps.
+            global-session  Scoped to a global HTTP web session. Only used for web apps.
+
+Bean LifeCycle
+        -   Container Started ->
+                Bean Instantiated ->
+                    Dependencies Injected ->
+                        Internal Spring Processing ->
+                            Your Custom init method ->
+                                Bean is Ready to Use/ Container is Shutdown ->
+                                    Your Custom Destroy method ->
+                                        STOP
+        -   You can add custom code during bean initialisation
+            -   Calling custom business logic method.
+            -  Setting up handles to resources.
+        -   You can add custom code during bean destruction.
+            -   Calling custom business logic method.
+            -   Setting up handles to resources.
+        -   Defining init and destroy methods
+            -   Access Modifier
+                -   The method can have any access modifier(private, public or protected).
+            -   Return Type
+                -   The method can have any return type. However, void is the most commonly used.
+                    If you give the return type just note that you won't be able to capture the
+                    return value.
+            -   Method name
+                -   The method can have any method name.
+            -   Arguments
+                -   The method cannot accept any arguments. The method should be no-arg.
+        -   Special Note about Destroy LifeCycle and Prototype Scope
+            -   For "prototype" scoped beans, Spring does not call the destroy method
+            -   In contrast to other scopes, Spring does not manage the complete lifecyle
+                of a prototype bean
+                -   the container instantiates, configures and otherwise assembles a prototype object
+                    then it hands this to the client, with no further record of the prototype instance
+                -   In the case of prototypes, configured destruction lifecycle callbacks are not called.
+                    (The client code must cleanup prototype-scoped objects and release expensive
+                     resources that the prototype beans are holding).
+
+Spring Configuration using Java Annotations
+    -   What are Java Annotations?
+        -   Special labels/markers added to Java classes
+        -   Provide meta-data about the class
+        -   Processed at compile time or run-time for special processing
+    -   Why Spring Configuration with Annotations?
+        -   XML configuration can be verbose.
+        -   Configure your Spring beans with Annotations.
+        -   Annotations minimizes the XML configuration.
+    -   What happens when you add Annotation to your class?
+        -   Spring will scan your Java classes for special annotations
+        -   Automatically register the beans in the Spring Container
+    -   Using @Component to get the spring bean goto (TennisCoach.java class for example)
+    -   Spring also supports default bean Id
+        -   Default bean id: the class name, make first letter-lower case
+            ClassName       Default Bean Id
+            TennisCoach     tennisCoach
+
+Spring Dependency Injection with Autowiring and Annotations
+    -   What is Spring AutoWiring ?
+        -   For dependency injection, Spring can use auto wiring
+        -   Spring will look for a class that matches a property
+            matches by type: class or interface
+        -   Spring will inject it automatically.. hence it is autowired
+    -   Autowiring Injection Types
+        -   Constructor injection
+        -   Setter injection
+        -   Field Injection
+    -   Constructor Injection
+        -   We can use @Autowired on the constructor to inject the dependencies
+        -   But what happens when we have multiple Implementations of the injected dependency?
+            -   Spring has a special support to handle this case. Use the @Qualifier annotation.
+        -   If you comment the @Autowired in the constructor injection, the code will still work
+            -   It is a new feature of Spring framework 4.3, an @Autowired annotation on such
+                a constructor is no longer necessary if the target bean defines only
+                one constructor to begin with.
+            -   However, if several constructors are available, atleast one must be annotated
+                to teach the container which one to use.
+    -   Setter Injection
+        -   Inject dependencies by setting method on your class directly
+        -   In injecting dependency using the setter methods just use the @Autowired annotation
+        -   Setter injection using @Autowired does not depend on method name, "Use ANY method name"
+    -   Field Injection
+        -   Inject dependencies by setting field values on your class directly(even private fields)
+        -   It is accomplished by using java reflection
+        -   @Autowired is applied directly to the field
+        -   No need to add setter methods
+    -   Default Bean names Special Case
+        -   The special case is when both the first and second characters of the class name are
+            upper case, then the name is not converted.
+            Eg. RESTFortuneService -> RESTFortuneService
+            No conversion since the first two characters are upper case.
+    -   Using Qualifiers with Constructors
+        -   Eg:
+            @Autowired
+            public TennisCoach(@Qualifier("randomFortuneService")
+                    FortuneService fortuneService){
+                this.fortuneService = fortuneService;
+            }
+    -   @Value("{value}") can be used to provide initial values to the
+        variables using properties file
+
