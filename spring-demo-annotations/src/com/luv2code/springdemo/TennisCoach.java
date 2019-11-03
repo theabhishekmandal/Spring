@@ -1,5 +1,8 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,6 +43,17 @@ public class TennisCoach implements Coach {
 	}
 	*/
 
+	// init method
+	@PostConstruct
+	private void doInitialisation() {
+		System.out.println("Initialisation code for TennisCoach Class");
+	}
+	
+	// destroy method
+	@PreDestroy
+	private void doCleanup() {
+		System.out.println("Cleanup code for TennisCoach Class");
+	}
 	@Override
 	public String getDailyWorkout() {
 		return "Practice your backhand volley";

@@ -10,7 +10,8 @@ public class PracticeDemo {
 				new ClassPathXmlApplicationContext("practiceApplicationContext2.xml");
 		
 		Coach coach = context.getBean("tableTennisCoach", Coach.class);
-
+		Coach alphacoach = context.getBean("tableTennisCoach", Coach.class);
+		
 		System.out.println(coach.getDailyWorkout());
 		System.out.println(coach.getDailyFortune());
 
