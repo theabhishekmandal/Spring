@@ -276,4 +276,15 @@ Spring Dependency Injection with Autowiring and Annotations
                     (The client code must cleanup prototype-scoped objects and release expensive
                      resources that the prototype beans are holding).
 
+3 Ways to configure Spring Container
+    -   Full XML Configuration
+    -   XML Component Scan
+    -   Java Configuration Class
+
+Spring Container using Java Configuration Class
+    -   You write Java source code to configure Spring Container
+    -   There is no use of xml in this type of Configuration
+    -   In the Configuration java class we annotate it with @Configuration Annotation
+    -   Also we use  @ComponentScan("package name")
+    -   Also to retrieve this class we use AnnotationConfigApplicationContext
 
