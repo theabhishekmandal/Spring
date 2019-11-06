@@ -284,7 +284,33 @@ Spring Dependency Injection with Autowiring and Annotations
 Spring Container using Java Configuration Class
     -   You write Java source code to configure Spring Container
     -   There is no use of xml in this type of Configuration
-    -   In the Configuration java class we annotate it with @Configuration Annotation
-    -   Also we use  @ComponentScan("package name")
-    -   Also to retrieve this class we use AnnotationConfigApplicationContext
+
+    -   1st method for using Java to configure Spring Container
+        -   In the Configuration java class we annotate it with @Configuration Annotation
+        -   Also we use  @ComponentScan("package name")
+        -   @ComponentScan will scan for @Component for creating beans as discussed above.
+        -   Also to retrieve this class we use AnnotationConfigApplicationContext
+
+
+    -   2nd method for using Java to configure Spring Container
+        -   When using @Bean then we don't require the @ComponentScan because
+            we are creating our bean manually
+        -   Also we don't need to add @Component to those class for which we need to
+            create bean because we are creating our bean manually.
+        -   Also to retrieve this class we use AnnotationConfigApplicationContext
+
+    -   How @Bean works ?
+        -   The @Bean annotation tells Spring that we are creating a bean component
+            manually. We didn't specify the scope so the scope is singleton.
+
+            public Coach swimCoach(){
+
+            }
+
+        -   This specifies that the bean will be bean id of "swimCoach".
+        -   The method name determines bean id. The return type is Coach interface.
+            This can help spring find any dependencies that implement the Coach
+            interface.
+        -   The @Bean annotation will intercept any requests for "swimCoach" bean.
+            Since we didn't specify a scope, the bean scope is singleton.
 

@@ -2,17 +2,16 @@ package com.luv2code.springdemo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class JavaConfigDemoApp {
+public class SwimJavaConfigDemoApp {
 
 	public static void main(String[] args) {
 
 		// read spring config java class
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig2.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 		
 		// get the bean from the spring container
-		// Coach coach = context.getBean("thatSillyCoach", Coach.class);
-		// using default bean id
-		Coach coach = context.getBean("tennisCoach", Coach.class);
+		// swimCoach bean id is the method name in SportConfig class
+		Coach coach = context.getBean("swimCoach", Coach.class);
 		
 		// call method on the bean
 		System.out.println(coach.getDailyWorkout());
