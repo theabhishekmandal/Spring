@@ -11,13 +11,17 @@ public class SwimJavaConfigDemoApp {
 		
 		// get the bean from the spring container
 		// swimCoach bean id is the method name in SportConfig class
-		Coach coach = context.getBean("swimCoach", Coach.class);
+		SwimCoach coach = context.getBean("swimCoach", SwimCoach.class);
 		
 		// call method on the bean
 		System.out.println(coach.getDailyWorkout());
 		
 		// call method to get daily fortune
 		System.out.println(coach.getDailyFortune());
+		
+		// call our new swim coach methods... has the props value injected
+		System.out.println("email: " + coach.getEmail());
+		System.out.println("team: " + coach.getTeam());
 		
 		// close the context
 		context.close();

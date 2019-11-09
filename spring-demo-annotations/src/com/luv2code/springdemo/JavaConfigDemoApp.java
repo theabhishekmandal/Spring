@@ -10,8 +10,7 @@ public class JavaConfigDemoApp {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig2.class);
 		
 		// get the bean from the spring container
-		// Coach coach = context.getBean("thatSillyCoach", Coach.class);
-		// using default bean id
+		// using default bean id i.e Class name in camel case
 		Coach coach = context.getBean("tennisCoach", Coach.class);
 		
 		// call method on the bean
