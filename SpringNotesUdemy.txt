@@ -359,3 +359,21 @@ Adding values using Properties file
     -   Also use @PropertySource("classpath:sports.properties") in the Java Config Class
         to load the properties
 
+What is Spring MVC ?
+    -   Framework for building web applications in Java
+    -   Based on Model-View Controller design pattern
+    -   Leverages features of the Core Spring Framework(DI, IoC)
+    -
+        WebBrowser ------> FrontController ------> Controller ------> ViewTemplate ------> Web Browser
+    -   Incoming requests comes to the FrontController from the WebBrowser
+    -   FrontController will delegate the requests to the Controller
+    -   Controller contains the business logic
+    -   Then you pass it to the View Template which contains our html jsp page
+    -   Then it renders the data on the jsp page and renders a response back it to the browser
+
+Spring MVC Benifits
+    -   The Spring way of building web app UIs in java
+    -   Leverage a set of reusable UI components
+    -   Help manage application state for web requests
+    -   Process form data: validation, conversion etc
+    -   Flexible configuration for the view layer
