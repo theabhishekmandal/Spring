@@ -2,6 +2,8 @@ package com.luv2code.springdemo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.luv2code.springdemo.Interface.Coach;
+
 public class JavaConfigDemoApp {
 
 	public static void main(String[] args) {

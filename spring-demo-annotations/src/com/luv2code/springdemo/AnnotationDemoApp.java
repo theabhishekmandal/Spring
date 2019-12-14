@@ -2,6 +2,8 @@ package com.luv2code.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.luv2code.springdemo.Interface.Coach;
+
 public class AnnotationDemoApp {
 
 	public static void main(String[] args) {

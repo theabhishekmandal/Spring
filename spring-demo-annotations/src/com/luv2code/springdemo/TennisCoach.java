@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.luv2code.springdemo.Interface.Coach;
+import com.luv2code.springdemo.Interface.FortuneService;
+
 // thatSillyCoach is the Explicit bean id
 //@Component("thatSillyCoach")
 

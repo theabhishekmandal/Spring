@@ -2,6 +2,9 @@ package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import com.luv2code.springdemo.Interface.Coach;
+import com.luv2code.springdemo.Interface.FortuneService;
+
 public class SwimCoach implements Coach {
 	
 	private FortuneService fortuneService;

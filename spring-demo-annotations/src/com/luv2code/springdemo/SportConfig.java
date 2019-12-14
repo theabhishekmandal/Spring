@@ -4,6 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import com.luv2code.springdemo.Interface.Coach;
+import com.luv2code.springdemo.Interface.FortuneService;
+
 @Configuration
 @PropertySource("classpath:sports.properties")
 public class SportConfig {

@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PracticeDemo",
+            "request": "launch",
+            "mainClass": "com.Practice.SpringDemoAnnotation.PracticeDemo",
+            "projectName": "spring-demo-annotations"
+        }
+    ]
+}

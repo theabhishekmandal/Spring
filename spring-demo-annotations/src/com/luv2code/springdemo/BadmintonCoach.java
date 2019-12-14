@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.luv2code.springdemo.Interface.Coach;
+import com.luv2code.springdemo.Interface.FortuneService;
+
 @Component
 @Scope("prototype")
 public class BadmintonCoach implements Coach {

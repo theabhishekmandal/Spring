@@ -1,5 +1,7 @@
 package com.luv2code.springdemo;
 
+import com.luv2code.springdemo.Interface.FortuneService;
+
 public class SadFortuneService implements FortuneService {
 
 	@Override

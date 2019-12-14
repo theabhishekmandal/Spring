@@ -5,7 +5,7 @@ import java.util.Random;
 
 import org.springframework.stereotype.Component;
 
-import com.luv2code.springdemo.FortuneService;
+import com.luv2code.springdemo.Interface.FortuneService;
 
 @Component
 public class RandomFortuneService implements FortuneService {
