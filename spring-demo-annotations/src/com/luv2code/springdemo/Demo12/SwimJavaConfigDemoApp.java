@@ -1,6 +1,12 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.Demo12;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+/*
+ *  Here we are creating beans manually by using @Bean and not using @Component and @ComponentScan
+ *  
+ *  Using @PropertySource to inject properties
+ */
 
 public class SwimJavaConfigDemoApp {
 

@@ -1,6 +1,9 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.Demo10;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+/*
+ * Here instead of reading configuration from xml we are reading from Java class
+ */
 
 import com.luv2code.springdemo.Interface.Coach;
 
@@ -9,7 +12,7 @@ public class JavaConfigDemoApp {
 	public static void main(String[] args) {
 
 		// read spring config java class
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig2.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 		
 		// get the bean from the spring container
 		// using default bean id i.e Class name in camel case

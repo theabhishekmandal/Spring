@@ -1,16 +1,15 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.Demo10;
 
 import org.springframework.stereotype.Component;
 
 import com.luv2code.springdemo.Interface.FortuneService;
 
 @Component
-public class RESTFortuneService implements FortuneService {
+public class HappyFortuneService implements FortuneService {
 
 	@Override
 	public String getFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Today is your lucky day";
 	}
 
 }

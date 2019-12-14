@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.Demo11;
 
 import com.luv2code.springdemo.Interface.FortuneService;
 

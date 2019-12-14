@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.Demo12;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
