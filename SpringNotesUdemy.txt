@@ -377,3 +377,74 @@ Spring MVC Benifits
     -   Help manage application state for web requests
     -   Process form data: validation, conversion etc
     -   Flexible configuration for the view layer
+
+Components of Spring MVC Application
+    -   A set of web pages to layout UI components
+    -   A collection of spring beans(controllers, services, etc)
+    -   Spring configuration(XML, Annotations or Java)
+
+Spring MVC Front Controller
+    -   Front Controller known as DispatcherServlet
+    -   You will create
+        -   Model objects
+            -   these contains data
+        -   View template
+            -   These are the JSP pages or view page to render the data
+        -   Controller classes
+            -   Business logic or processing logic
+
+Detail Note on Model, View and Controller
+    Controller
+        -   Code created by developer
+        -   Contains your business logic
+            -   Handle Requests
+            -   Store/ retrieve data
+            -   Place data in Model objects
+        -   Send back to the appropriate View Template
+
+    Model
+        -   Model contains the data
+        -   Store/retrieve data via backend systems
+            -   database, webservice, etc ...
+            -   Use a Spring bean if you like
+        -   Place your data in the model
+            -   Data can be any Java object/collection
+
+    View Template
+        -   Spring MVC is flexible
+            -   Supports many view templates
+        -   Most common is JSP + JSTL
+            -   Model data comes to your View Template and then JSP can read that model data and display it
+            -   For eg: if you have list of students then your JSP page can create a table to display that students list
+        -   Developer creates page
+            -   Displays data
+
+Steps for Configuring Spring MVC configuration:
+    -   Step 1 Configure Spring DispatcherServlet(web.xml)
+        -   we need to add an entry for the spring dispatcher servlet or the Front Controller
+        -   You add the name and the class for the spring dispatcher servlet
+        -   spring dispatcher servlet is a part of core spring framework
+
+        -   Once you have a servlet reference then you setup initial parameters
+        -   you tell where your spring context configuration file is located
+
+    -   Step 2 Setup the URL mappings to Spring MVC Dispatcher Servlet(web.xml)
+        -   for any url pattern coming in for eg : "/", pass it to the dispatcher servlet
+
+    -   Step 3 Add support for Spring component Scanning(spring-mvc-demo-servlet.xml)
+        -   In this we add support for component scanning
+
+    -   Step 4 Add support for conversion, formatting and validation(spring-mvc-demo-servlet.xml)
+        -   conversions of form data, formatting of form data and validation of form data
+
+    -   Step 5 Configure Spring MVC View Resolver(spring-mvc-demo-servlet.xml)
+        -   how to display the page or where the page is located
+
+
+MVC Configuration
+    -   Window -> Perspective -> Open Perspective -> JavaEE
+    -   Create new Dynamic Web Project and name it as spring-mvc-demo
+    -   copy the jar files and paste in the lib folder
+    -   add the web.xml and spring-mvc-demo-servlet.xml to the WEB-INF folder
+    -   now in spring-mvc-demo-servlet.xml in Step 5 we don't have the "/WEB-INF/view" folder so we have to create it.
+    -
