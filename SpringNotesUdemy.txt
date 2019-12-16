@@ -447,4 +447,11 @@ MVC Configuration
     -   copy the jar files and paste in the lib folder
     -   add the web.xml and spring-mvc-demo-servlet.xml to the WEB-INF folder
     -   now in spring-mvc-demo-servlet.xml in Step 5 we don't have the "/WEB-INF/view" folder so we have to create it.
-    -
+
+@Controller
+    -   It is used for component scanning but for web requests
+    -   It extends @Component, so it is also included in component scanning
+    -   @RequestMapping is also to be added to a method which will return a view name
+    -   for eg: @RequestMapping("/"), so when / is pressed or entered then a view name should be returned
+        in the form of a jsp or something else.
+
