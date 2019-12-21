@@ -467,3 +467,43 @@ How does Component Scan work Your Package names are different?
         sub packages.
     -   The package com.luv2code.springdemo.mvc is a sub package because of
         naming structure, just like folders on a file system.
+
+Spring Model
+    -   The model is the container for your application data
+    -   In your Controller
+        -   You can put anything in the model
+        -   strings, objects info from database etc
+    -   Your view JSP can access data from the model
+    -   For eg: Model class is used to pass data between controllers and views
+
+@RequestParam
+    -   @RequestParam("studentName") is used to read form data and automatically bind it to a variable
+    -   Earlier we were using HttpServletRequst class to fetch the variable
+
+Adding Request Mappings to Controller
+    -   Serves a parent mapping for controller
+    -   All request mappings on methods in the controller are relative eg: if the requestMapping is on the class,
+        then all the methods inside it are realtive to the class
+    -   Similar to folder directory structures
+
+Spring MVC Form Tags
+    -   Spring MVC Form Tags are building block for a web page
+    -   Form tags are configurable and reusable for a webpage
+
+Data Binding
+    -   Spring MVC Form Tags can make use of data binding
+    -   Automatically setting/ retrieving data from a Java object / bean
+
+Spring MVC Form Tags
+    -   Form Tags           Description
+        form:form           main from container
+        form:input          text field
+        form:textarea       multi-line text field
+        form:checkbox       checkbox
+        form:radiobutton    radio buttons
+        form:select         drop down list
+        more...
+
+@ModelAttribute
+    -   It is used to bind the parameter that is passed in
+    -   For eg: @ModelAttribute("student") Student student, "student" attribute is being bind to Student student object
