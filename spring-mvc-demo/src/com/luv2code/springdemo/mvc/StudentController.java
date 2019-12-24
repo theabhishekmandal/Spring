@@ -18,10 +18,14 @@ public class StudentController {
 		// add student object to the model
 		model.addAttribute("student", thestudent);
 		
+		System.out.println(
+				"name: " + thestudent.getFirstName() + " " + thestudent.getLastName() + " country " + thestudent.getCountry()
+				);
+		
 		return "student-form";
 	}
 	
-	@RequestMapping("processForm")
+	@RequestMapping("/processForm")
 	public String processForm(@ModelAttribute("student") Student student) {
 		
 		// log the input data

@@ -498,12 +498,14 @@ Spring MVC Form Tags
     -   Form Tags           Description
         form:form           main from container
         form:input          text field
+        form:select         drop down list
         form:textarea       multi-line text field
         form:checkbox       checkbox
         form:radiobutton    radio buttons
-        form:select         drop down list
         more...
 
 @ModelAttribute
     -   It is used to bind the parameter that is passed in
     -   For eg: @ModelAttribute("student") Student student, "student" attribute is being bind to Student student object
+
+
