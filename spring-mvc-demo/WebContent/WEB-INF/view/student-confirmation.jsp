@@ -12,6 +12,15 @@
 	<br><br>
 	
 	Country: ${student.country}
+
+	<br><br>
+	
+	Favorite Language: ${student.favoriteLanguage}
+	
+	<br><br>
+	
+	Gender : ${student.gender}
+	
 </body>
 
 </html>

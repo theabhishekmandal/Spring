@@ -18,10 +18,6 @@ public class StudentController {
 		// add student object to the model
 		model.addAttribute("student", thestudent);
 		
-		System.out.println(
-				"name: " + thestudent.getFirstName() + " " + thestudent.getLastName() + " country " + thestudent.getCountry()
-				);
-		
 		return "student-form";
 	}
 	

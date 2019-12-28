@@ -24,14 +24,34 @@
 
 		<form:select path="country">
 		
+		<!--
+			not using the hardcoded value in jsp using the values present in java class
+			  	
 			<form:option value="Brazil" label="Brazil" />
 			<form:option value="India" label="India" />
 			<form:option value="France" label="France" />
 			<form:option value="Germany" label="Germany" />
+		-->
+		
+		<form:options items="${student.countryOptions}" />
 		
 		</form:select>
 		
 		<br><br>	
+
+		Favorite Language:
+		<!-- on call spring will call the student.setFavoriteLanguage method -->	
+		Java<form:radiobutton path="favoriteLanguage" value="Java"/>
+		C#<form:radiobutton path="favoriteLanguage" value="C#"/>
+		PHP<form:radiobutton path="favoriteLanguage" value="PHP"/>
+		RUBY<form:radiobutton path="favoriteLanguage" value="RUBY"/>
+		
+		<br><br>	
+
+		Gender:
+		<form:radiobuttons path="gender" items="${student.genderOptions}"/>	
+		
+		<br><br>
 
 		<input type="submit" value="Submit" />
 
