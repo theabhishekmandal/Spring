@@ -508,4 +508,56 @@ Spring MVC Form Tags
     -   It is used to bind the parameter that is passed in
     -   For eg: @ModelAttribute("student") Student student, "student" attribute is being bind to Student student object
 
+Spring MVC Validation
+    -   What is the need for Validation
+        -   Check the user input form for
+            -   required fields
+            -   valid numbers in a range
+            -   valid format(postal code)
+            -   custom business rule
+    -   Java's Standard Bean validation API
+        -   Java has standard bean validation API
+        -   Defines a metadata model and API for entity validation
+        -   Not tied to either the web tier or the persistence tier
+        -   Available for server-side apps and also client-side JavaFx/Swing apps
+    -   Spring and Validation
+        -   Spring version 4 and higher supports Bean Validation API
+        -   Preferred method for validation when building Spring apps
+        -   Simply add validation JARs to our project
+    -   Bean Validation features
+        -   required
+        -   validate length
+        -   validate numbers
+        -   validate with regular expressions
+        -   custom validation
+    -   Validation Annotations
+        -   @NotNull        Checks that the annotated value is not null
+        -   @Min            Must be a number >= value
+        -   @Max            Must be a number <= value
+        -   @Size           Size must match the given size
+        -   @Pattern        Must match a regular expression pattern
+        -   @Future/@Past   Date must be in future or past the given date
+        -   others...
+    -   Installing validation jar files
+        -   go to hibernate.org
+        -   go to Hibernate Validator and download the zip file
+        -   unzip the validator file and copy the jar files in ./dist directory and ./dist/required directory
+        -   paste them in WEB-INF/lib directory
+    -   Special Note about BindingResult Parameter Order
+        -   When performing Spring MVC validation, the location of the BindingResult parameter is
+            very important.
+        -   In the method signature, the BindingResult parameter must appear immediately after the
+            model attribute
+        -   If you place it in any other location, Spring MVC validation will not work as desired.
+        -   Eg
+                @RequestMapping("/processForm")
+                public String processForm(
+                        @Valid @ModelAttribute("customer") Customer theCustomer,
+                        BindingResult theBindingResult){
 
+                }
+
+    -   @InitBinder
+        -   @InitBinder annotation works as a preprocessor
+        -   It will preprocess each web request to our controller
+        -   Method annotated with @InitBinder is executed
