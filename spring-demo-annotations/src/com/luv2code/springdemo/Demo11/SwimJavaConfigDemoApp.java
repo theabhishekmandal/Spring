@@ -2,6 +2,8 @@ package com.luv2code.springdemo.Demo11;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.luv2code.springdemo.Interface.Coach;
+
 /*
  *  Here we are creating beans manually by using @Bean and not using @Component and @ComponentScan
  */
@@ -15,7 +17,7 @@ public class SwimJavaConfigDemoApp {
 		
 		// get the bean from the spring container
 		// swimCoach bean id is the method name in SportConfig class
-		SwimCoach coach = context.getBean("swimCoach", SwimCoach.class);
+		Coach coach = context.getBean("swimCoach", Coach.class);
 		
 		// call method on the bean
 		System.out.println(coach.getDailyWorkout());
