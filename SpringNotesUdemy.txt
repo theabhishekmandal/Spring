@@ -543,6 +543,8 @@ Spring MVC Validation
         -   go to Hibernate Validator and download the zip file
         -   unzip the validator file and copy the jar files in ./dist directory and ./dist/required directory
         -   paste them in WEB-INF/lib directory
+    -   BindingResult class object holds the result of the validations performed, also if you print the
+        BindingResult object it will show various details of validation
     -   Special Note about BindingResult Parameter Order
         -   When performing Spring MVC validation, the location of the BindingResult parameter is
             very important.
@@ -561,3 +563,6 @@ Spring MVC Validation
         -   @InitBinder annotation works as a preprocessor
         -   It will preprocess each web request to our controller
         -   Method annotated with @InitBinder is executed
+
+    -   Custom Validation using your own annotations
+        -   Your own custom annotation can be used for validation see example package "com.luv2code.springdemo.mvc.validation"
